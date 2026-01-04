@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abil — Software Engineer Portfolio</title>
+    <meta name="description" content="Portfolio profesional Abil: backend, realtime systems, databases, and modern web with Python, JS/TS, PostgreSQL, Redis, ManticoreSearch, WebSocket." />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config: font, container -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 10px 30px rgba(0,0,0,.06)",
+            },
+            keyframes: {
+              fadeUp: {
+                "0%": { opacity: "0", transform: "translateY(12px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+            animation: {
+              fadeUp: "fadeUp .6s ease-out forwards",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      /* Smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Reveal initial state */
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      /* Custom gradient underline link */
+      .link-underline {
+        background-image: linear-gradient(transparent 60%, rgba(99, 102, 241, 0.25) 60%);
+        background-size: 100% 100%;
+        transition: background-image 0.25s ease;
+      }
+      .link-underline:hover {
+        background-image: linear-gradient(transparent 60%, rgba(99, 102, 241, 0.45) 60%);
+      }
+      /* Focus visible outline */
+      .focus-ring:focus-visible {
+        outline: 2px solid #6366f1;
+        outline-offset: 2px;
+        border-radius: 6px;
+      }
+      /* Subtle parallax for hero bg */
+      .parallax {
+        background: radial-gradient(1200px 500px at 10% 10%, rgba(99, 102, 241, 0.08), transparent 65%), radial-gradient(900px 400px at 90% 20%, rgba(16, 185, 129, 0.08), transparent 65%);
+      }
+      /* Typing effect */
+      @keyframes blink {
+        0%,
+        100% {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #6366f1;
+        }
+      }
+      #animated-text {
+        white-space: nowrap;
+        overflow: hidden;
+        animation: blink 0.8s infinite;
+      } /* Exit animation */
+      .fade-out {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-900 antialiased">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-30 bg-white/80 backdrop-blur border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center justify-between h-14">
+          <a href="#home" class="font-semibold text-slate-900 hover:text-indigo-600 transition focus-ring">Abil</a>
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#about" class="hover:text-indigo-600 transition focus-ring">Tentang</a>
+            <a href="#skills" class="hover:text-indigo-600 transition focus-ring">Keahlian</a>
+            <a href="#projects" class="hover:text-indigo-600 transition focus-ring">Proyek</a>
+            <a href="#experience" class="hover:text-indigo-600 transition focus-ring">Pengalaman</a>
+            <a href="#contact" class="hover:text-indigo-600 transition focus-ring">Kontak</a>
+          </nav>
+          <a href="#contact" class="inline-flex items-center rounded-lg px-3.5 py-2 text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition shadow-soft focus-ring">Hubungi</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <!-- <section id="home" class="pt-28 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-indigo-50 via-sky-50 to-emerald-50">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-7 reveal">
+          <p class="text-sm font-medium text-indigo-600 mb-2">Software Engineer</p>
+          <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+            <span id="animated-text" class="border-r-2 border-indigo-600 pr-1"></span>
+          </h1>
+          <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-6">Saya fokus pada arsitektur data, API realtime, dan pengalaman pengguna modern.</p>
+        </div>
+      </div>
+    </section> -->
+    <section id="home" class="parallax pt-28 md:pt-32 pb-16 md:pb-24">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-7 reveal">
+          <p class="text-sm font-medium text-indigo-600 mb-2">Software Engineer</p>
+          <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+            <span id="animated-text" class="border-r-2 border-indigo-600 pr-1"></span>
+          </h1>
+          <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-6">
+            Saya fokus pada arsitektur data, API realtime, dan pengalaman pengguna modern. Berpengalaman dengan Python, JavaScript/TypeScript, PostgreSQL, Redis, ManticoreSearch, dan WebSocket untuk solusi yang dapat diskalakan.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#projects" class="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium bg-slate-900 text-white hover:bg-slate-700 transition focus-ring">Lihat Proyek</a>
+            <a href="#contact" class="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium border border-slate-300 text-slate-900 hover:border-slate-400 transition focus-ring">Buka Diskusi</a>
+          </div>
+        </div>
+        <div class="md:col-span-5 reveal md:justify-self-end">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Work setup" class="rounded-xl shadow-soft object-cover w-full h-[260px] md:h-[340px]" />
+            <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-soft p-3 w-[220px]">
+              <p class="text-xs text-slate-500">Stack utama</p>
+              <div class="mt-1 flex flex-wrap gap-1.5">
+                <span class="px-2 py-1 text-xs rounded-full bg-indigo-50 text-indigo-700">NodeJS</span> <span class="px-2 py-1 text-xs rounded-full bg-emerald-50 text-emerald-700">TypeScript</span>
+                <span class="px-2 py-1 text-xs rounded-full bg-sky-50 text-sky-700">PostgreSQL</span> <span class="px-2 py-1 text-xs rounded-full bg-rose-50 text-rose-700">Redis</span>
+                <span class="px-2 py-1 text-xs rounded-full bg-fuchsia-50 text-fuchsia-700">ManticoreSearch</span> <span class="px-2 py-1 text-xs rounded-full bg-amber-50 text-amber-700">WebSocket</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About -->
+    <section id="about" class="py-16 md:py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-5 reveal">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-4">Tentang saya</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Saya Abil, seorang engineer yang menikmati menggabungkan arsitektur data yang solid dengan interaksi UI yang halus. Saya membangun sistem yang observabel, mudah dirawat, dan performa tinggi—mulai dari backend realtime hingga
+            front-end modern.
+          </p>
+          <p class="text-slate-600 leading-relaxed mt-4">Saya percaya pada iterasi cepat, pengujian menyeluruh, dan desain yang ramah aksesibilitas. Tujuan saya: membuat pengalaman yang terasa ringan, responsif, dan konsisten.</p>
+        </div>
+        <div class="md:col-span-7 reveal">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="rounded-xl bg-white p-5 shadow-soft">
+              <h3 class="font-semibold mb-2">Nilai kerja</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li>• Observabilitas & monitoring proaktif</li>
+                <li>• Kualitas kode & maintainability</li>
+                <li>• UX yang jelas dan fokus</li>
+                <li>• Dokumentasi ringkas</li>
+              </ul>
+            </div>
+            <div class="rounded-xl bg-white p-5 shadow-soft">
+              <h3 class="font-semibold mb-2">Fokus teknis</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li>• API realtime dan event-driven</li>
+                <li>• Query full-text & pencarian cepat</li>
+                <li>• Skema data yang efisien</li>
+                <li>• Performance profiling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="reveal">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-8">Keahlian</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Languages -->
+            <div class="rounded-xl border border-slate-200 p-5 hover:shadow-soft transition">
+              <h3 class="font-semibold mb-3">Bahasa & runtime</h3>
+              <ul class="space-y-2 text-slate-700">
+                <li>• Python</li>
+                <li>• JavaScript</li>
+                <li>• TypeScript</li>
+              </ul>
+            </div>
+            <!-- Databases & search -->
+            <div class="rounded-xl border border-slate-200 p-5 hover:shadow-soft transition">
+              <h3 class="font-semibold mb-3">Database & pencarian</h3>
+              <ul class="space-y-2 text-slate-700">
+                <li>• PostgreSQL</li>
+                <li>• Redis</li>
+                <li>• ManticoreSearch</li>
+              </ul>
+            </div>
+            <!-- Realtime & web -->
+            <div class="rounded-xl border border-slate-200 p-5 hover:shadow-soft transition">
+              <h3 class="font-semibold mb-3">Realtime & web</h3>
+              <ul class="space-y-2 text-slate-700">
+                <li>• WebSocket</li>
+                <li>• REST & Web APIs</li>
+                <li>• Performance & profiling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- badges -->
+        <div class="reveal mt-8 flex flex-wrap gap-2">
+          <span class="px-3 py-1 text-sm rounded-full bg-slate-100">Clean architecture</span>
+          <span class="px-3 py-1 text-sm rounded-full bg-slate-100">Testing & CI</span>
+          <span class="px-3 py-1 text-sm rounded-full bg-slate-100">Accessibility</span>
+          <span class="px-3 py-1 text-sm rounded-full bg-slate-100">Observability</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-16 md:py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="reveal">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-6">Proyek terpilih</h2>
+          <p class="text-slate-600 mb-8">Beberapa karya yang menyoroti sistem realtime, pencarian cepat, dan UX yang rapi.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Project 1 -->
+          <article class="reveal rounded-xl bg-white border border-slate-200 overflow-hidden hover:shadow-soft transition">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Realtime dashboard" class="w-full h-40 object-cover" />
+            <div class="p-5">
+              <h3 class="font-semibold">Realtime Ops Dashboard</h3>
+              <p class="text-slate-600 mt-1">Dashboard operasional dengan WebSocket untuk notifikasi live, stream metrics, dan kontrol antrian.</p>
+              <ul class="text-slate-600 text-sm mt-3 space-y-1">
+                <li>• Stack: Python, TypeScript, Redis, WebSocket</li>
+                <li>• Fitur: auth, throttling, observability, alerts</li>
+              </ul>
+              <a href="#" class="inline-block mt-4 text-indigo-600 link-underline">Detail proyek</a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="reveal rounded-xl bg-white border border-slate-200 overflow-hidden hover:shadow-soft transition">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop" alt="Search platform" class="w-full h-40 object-cover" />
+            <div class="p-5">
+              <h3 class="font-semibold">Search & Discovery Service</h3>
+              <p class="text-slate-600 mt-1">Layanan pencarian full-text dengan ManticoreSearch dan caching Redis untuk respons sub-100ms.</p>
+              <ul class="text-slate-600 text-sm mt-3 space-y-1">
+                <li>• Stack: TypeScript, PostgreSQL, Redis, ManticoreSearch</li>
+                <li>• Fitur: relevansi, synonyms, facets, analytics</li>
+              </ul>
+              <a href="#" class="inline-block mt-4 text-indigo-600 link-underline">Detail proyek</a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="reveal rounded-xl bg-white border border-slate-200 overflow-hidden hover:shadow-soft transition">
+            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1200&auto=format&fit=crop" alt="API platform" class="w-full h-40 object-cover" />
+            <div class="p-5">
+              <h3 class="font-semibold">Event-driven API Platform</h3>
+              <p class="text-slate-600 mt-1">Platform API dengan event bus dan backpressure handling, cocok untuk integrasi skala menengah-besar.</p>
+              <ul class="text-slate-600 text-sm mt-3 space-y-1">
+                <li>• Stack: Python, PostgreSQL, WebSocket</li>
+                <li>• Fitur: rate limits, retries, dead-letter queues</li>
+              </ul>
+              <a href="#" class="inline-block mt-4 text-indigo-600 link-underline">Detail proyek</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-4 reveal">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-8">Pengalaman</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="rounded-xl border border-slate-200 p-5 hover:shadow-soft transition">
+            <h3 class="font-semibold">Backend & Realtime Engineer</h3>
+            <p class="text-slate-600 mt-1">Merancang API realtime, mengoptimalkan query, dan membangun pipeline data observabel.</p>
+            <ul class="text-slate-600 text-sm mt-3 space-y-1">
+              <li>• WebSocket broadcasting & presence</li>
+              <li>• Indexing & caching strategy</li>
+              <li>• Load testing & tracing</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-slate-200 p-5 hover:shadow-soft transition">
+            <h3 class="font-semibold">Full-stack Web Developer</h3>
+            <p class="text-slate-600 mt-1">Mendesain antarmuka profesional dan pengalaman pengguna yang seimbang dan ramah aksesibilitas.</p>
+            <ul class="text-slate-600 text-sm mt-3 space-y-1">
+              <li>• UI sistematis & design tokens</li>
+              <li>• SSR/SPA patterns & data fetching</li>
+              <li>• Performance budget & profiling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 md:py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4 reveal">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6">Kontak</h2>
+        <p class="text-slate-600 mb-6">Tertarik berkolaborasi atau butuh bantuan teknis? Kirim pesan—saya akan membalas secepatnya.</p>
+
+        <form class="grid md:grid-cols-2 gap-6">
+          <div class="md:col-span-1">
+            <label class="block text-sm font-medium text-slate-700 mb-1">Nama</label>
+            <input type="text" placeholder="Nama Anda" class="w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" />
+          </div>
+          <div class="md:col-span-1">
+            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+            <input type="email" placeholder="email@domain.com" class="w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" />
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-slate-700 mb-1">Pesan</label>
+            <textarea rows="5" placeholder="Ceritakan kebutuhan Anda..." class="w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"></textarea>
+          </div>
+          <div class="md:col-span-2 flex items-center justify-between">
+            <p class="text-xs text-slate-500">Dengan mengirim, Anda setuju untuk dihubungi via email.</p>
+            <button type="submit" class="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition shadow-soft">Kirim</button>
+          </div>
+        </form>
+
+        <div class="mt-8 flex gap-4">
+          <a href="https://github.com/" target="_blank" rel="noreferrer" class="text-slate-600 hover:text-slate-900 focus-ring">GitHub</a>
+          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" class="text-slate-600 hover:text-slate-900 focus-ring">LinkedIn</a>
+          <a href="mailto:you@example.com" class="text-slate-600 hover:text-slate-900 focus-ring">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 text-sm text-slate-500">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p>© <span id="year"></span> Abil. Semua hak dilindungi.</p>
+          <p>Berbasis di Jombang, East Java, Indonesia.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Typing animation
+      const textElement = document.getElementById("animated-text");
+      const texts = ["Hai saya Fadli", "Full Stack Developer"];
+      let textIndex = 0;
+      let charIndex = 0;
+      let typing = true;
+
+      function typeEffect() {
+        const currentText = texts[textIndex];
+        if (typing) {
+          if (charIndex < currentText.length) {
+            textElement.textContent += currentText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeEffect, 100);
+          } else {
+            typing = false;
+            setTimeout(typeEffect, 2000); // pause before deleting
+          }
+        } else {
+          if (charIndex > 0) {
+            textElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(typeEffect, 50);
+          } else {
+            typing = true;
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(typeEffect, 500);
+          }
+        }
+      }
+      typeEffect();
+
+      // Reveal on scroll with exit
+      const observer2 = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("reveal", "fade-out");
+              entry.target.classList.add("animate-fadeUp");
+            } else {
+              entry.target.classList.add("fade-out");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    </script>
+    <!-- Vanilla JS: reveal on scroll, active nav, year -->
+    <script>
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Reveal on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("reveal");
+              entry.target.classList.add("animate-fadeUp");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      // Active nav underline on scroll
+      const sections = ["home", "about", "skills", "projects", "experience", "contact"].map((id) => document.getElementById(id));
+      const navLinks = Array.from(document.querySelectorAll("header nav a"));
+
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.id;
+            const link = navLinks.find((a) => a.getAttribute("href") === "#" + id);
+            if (link) {
+              if (entry.isIntersecting) {
+                navLinks.forEach((a) => a.classList.remove("text-indigo-600"));
+                link.classList.add("text-indigo-600");
+              }
+            }
+          });
+        },
+        { threshold: 0.6 }
+      );
+
+      sections.forEach((sec) => sectionObserver.observe(sec));
+    </script>
+  </body>
+</html>
